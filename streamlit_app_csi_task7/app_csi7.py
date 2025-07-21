@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 
 #  Load  trained model
-with open('model_csi7.pkl', 'rb') as f:
+with open('streamlit_app_csi_task7/model_csi7.pkl', 'rb') as f:
     model = pickle.load(f)
 
 #  Load Iris dataset for visuals
