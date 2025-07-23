@@ -33,12 +33,8 @@ Try asking:
 
 ---
 
-## 📂 Project Structure
-Assignment_8_csi/
-│
-├──app.py # Streamlit app script
-├── requirements.txt # Required packages
-├── README.md # This file
+##Resource
+https://www.kaggle.com/datasets/sonalisingh1411/loan-approval-prediction?select=Training+Dataset.csv
 
 ## 📸 Screenshot
 
