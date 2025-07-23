@@ -1,102 +1,99 @@
-# Plant Pathology Project CSI
-This folder in the repository contains the image classification project assigned for the Plant Pathology task, which focuses on classifying leaf images into multiple disease categories using traditional machine learning techniques.
-Project Description
-This folder in the repository contains the image classification project assigned for the Plant Pathology task.
-The aim is to classify leaf images into four categories — healthy, rust, scab, and multiple diseases — using traditional machine learning techniques instead of deep learning or transfer learning.
+# 🌿 Plant Pathology Project — CSI Internship
 
-The project demonstrates how handcrafted features such as color histograms, Local Binary Patterns (LBP), and Haralick GLCM texture properties can be extracted from images to train classical ML models.
+This folder in the repository contains the **image classification project** assigned for the Plant Pathology task, which focuses on classifying leaf images into multiple disease categories using **traditional machine learning techniques** (not deep learning or transfer learning).
 
-Three main models were implemented:
-Random Forest
+---
 
-Gradient Boosting
+## 🎯 **Project Objective**
 
-Support Vector Machine (SVM)
-and additionally, XGBoost was tested to compare performance.
+To classify leaf images into **four categories** — **Healthy**, **Rust**, **Scab**, and **Multiple Diseases** — using **handcrafted features** and traditional ML models.
 
-DATASET DESCRIPTION
+---
 
-Images of plant leaves with different conditions (healthy or infected with various diseases).
-Each image has a unique image_id and a label.
+## 🗂️ **Dataset Description**
 
-Labels are encoded as:
+- Images of plant leaves with different conditions (healthy or infected).
+- Each image has a **unique `image_id`** and a **label**.
+- **Classes:**
+  - Healthy (516 images)
+  - Rust (622 images)
+  - Scab (592 images)
+  - Multiple Diseases (91 images)
+- Images are stored in: `images_plant_pathology/`
+- Labels are linked via: `plant_pathology_project.csv`
 
-healthy (516 images)
+---
 
-rust (622 images)
+## 🔍 **Features Extracted**
 
-scab (592 images)
+- 📊 **Color Histograms:**  
+  - 8 bins each for **Blue**, **Green**, **Red** channels → 24 features total.
+- 🌀 **Texture (LBP):**  
+  - Local Binary Pattern histograms → 9 features.
+- 🧩 **Texture (GLCM):**  
+  - Haralick Gray-Level Co-occurrence Matrix → **Contrast** & **Dissimilarity** (2 features).
 
-multiple_diseases (91 images)
+---
 
-Images are stored in a local folder: images_plant_pathology/
+## ⚙️ **Models Used**
 
-Labels are linked via a CSV file: plant_pathology_project.csv
+- 🌲 **Random Forest**
+- 🎯 **Gradient Boosting**
+- 🧩 **Support Vector Machine (SVM)**
+- ⚡ **XGBoost** (for comparison)
 
+---
 
-FEATURES EXTRACTED
-Color Histograms:
-8 bins each for Blue, Green, and Red channels (24 features).
+## 🧪 **Model Training & Evaluation**
 
-Texture (LBP):
-Local Binary Pattern histograms (9 features).
+- Data split into **training** and **validation** sets.
+- **GridSearchCV** used for tuning hyperparameters.
+- **Metrics:**  
+  - Validation Accuracy  
+  - Confusion Matrix  
+  - Classification Report (Precision, Recall, F1-Score)
+- Models also tested on **random validation images** to visually confirm predictions.
 
-Texture (GLCM):
-Haralick Gray-Level Co-occurrence Matrix properties- contrast and dissimilarity (2 features).
+---
 
-MODEL TRAINING AND EVALUATION
+## 📊 **Outcome**
 
--Data was split into training and validation sets.
+- ✅ **Gradient Boosting** achieved **~61% accuracy**.
+- ✅ **Random Forest & XGBoost**: **~58–59% accuracy**.
+- ✅ **SVM**: ~58% accuracy.
+- Note: Accuracy is lower than deep learning as **traditional ML uses manual features**.
 
--Each model was trained using GridSearchCV to find optimal parameters.
+---
 
+## ⚠️ **Limitations**
 
-Evaluation included:
+- 📌 **No use of test images:** Official test images had no ground truth labels (Kaggle-only).
+- 📌 Accuracy can be significantly improved with **deep learning (CNNs)** and **transfer learning**.
+- 📌 Traditionsl ML and Handcrafted features have limitations in capturing complex patterns.
 
--Validation Accuracy
+---
 
--Confusion Matrix
+## 🚀 **Deployment**
 
--Classification Report (Precision, Recall, F1-score)
+The best performing **Gradient Boosting model** is deployed using **Streamlit**:
 
--Models were also tested on random validation images to check prediction correctness visually.
+👉 [**View the Live App Here**](https://imageclassificationcsi25internthirdyear-o8tovuycmczd8tzrwvjpu6.streamlit.app/)
 
+---
 
-TOOLS AND LIBRARIES
--Python
+## 🛠️ **Tools & Libraries**
 
--OpenCV (image reading & processing)
+- **Python**
+- **OpenCV** (image reading & processing)
+- **Scikit-image** (LBP & GLCM texture)
+- **Scikit-learn** (models, GridSearchCV, metrics)
+- **XGBoost**
+- **Matplotlib & Seaborn** (visualization)
+- **Streamlit** (deployment)
 
--Scikit-image (LBP & GLCM texture)
+---
 
--Scikit-learn (models, metrics, GridSearchCV)
-
--XGBoost (gradient boosting classifier)
-
--Matplotlib & Seaborn (visualization)
-
-
-OUTCOME
-
--Gradient Boosting achieved the best accuracy (~61%).
-
--Random Forest and XGBoost performed comparably (~58–59%).
-
--SVM had slightly lower accuracy (~58%).
-
--Accuracy is lower than deep learning approaches because traditional ML models rely on manually engineered features, not end-to-end feature learning.
-
-
-LIMITATIONS
--No use of test images: the dataset’s official test images had no ground truth labels and were meant for Kaggle submission only, so they were not used for final evaluation.
-
--Accuracy can be significantly improved using deep learning (CNNs) and transfer learning techniques.
-
--Handcrafted features can’t capture complex patterns as effectively as learned features from CNN filters.
+✨ *This project demonstrates how classic ML pipelines can be built for image classification with handcrafted features in a resource-constrained setting.*  
 
 
-MODEL DEPLOYMENT
-The model has been deployed using streamlit .
-
-App link : https://imageclassificationcsi25internthirdyear-o8tovuycmczd8tzrwvjpu6.streamlit.app/
 
