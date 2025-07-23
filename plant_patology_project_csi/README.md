@@ -64,4 +64,7 @@ LIMITATIONS
 -Accuracy can be significantly improved using deep learning (CNNs) and transfer learning techniques.
 -Handcrafted features can’t capture complex patterns as effectively as learned features from CNN filters.
 
+MODEL DEPLOYMENT
+The model has been deployed using streamlit .
+App link : https://imageclassificationcsi25internthirdyear-o8tovuycmczd8tzrwvjpu6.streamlit.app/
 
